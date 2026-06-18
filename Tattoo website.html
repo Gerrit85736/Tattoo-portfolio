@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ink & Concept | Custom Tattoo Designs</title>
+    <style>
+        /* Google Fonts for a professional look */
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Inter:wght@300;400;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #0d0d0d;
+            color: #f5f5f5;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+        }
+
+        /* Header / Navigation */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 10%;
+            background-color: #0d0d0d;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #1a1a1a;
+        }
+
+        .logo {
+            font-family: 'Cinzel', serif;
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            color: #fff;
+        }
+
+        nav a {
+            color: #a3a3a3;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #fff;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 100px 10%;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 52px;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #a3a3a3;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+
+        .cta-btn {
+            background-color: #fff;
+            color: #000;
+            padding: 14px 32px;
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 1px;
+            border-radius: 4px;
+            transition: background 0.3s ease;
+        }
+
+        .cta-btn:hover {
+            background-color: #cccccc;
+        }
+
+        /* Gallery Grid Section */
+        .gallery-container {
+            padding: 80px 10%;
+            background-color: #121212;
+        }
+
+        .section-title {
+            font-family: 'Cinzel', serif;
+            font-size: 32px;
+            text-align: center;
+            margin-bottom: 50px;
+            letter-spacing: 1px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .art-card {
+            background-color: #1a1a1a;
+            border: 1px solid #262626;
+            border-radius: 6px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .art-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .art-card img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            filter: grayscale(30%);
+            transition: filter 0.3s ease;
+        }
+
+        .art-card:hover img {
+            filter: grayscale(0%);
+        }
+
+        .art-info {
+            padding: 20px;
+        }
+
+        .art-info h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .art-info p {
+            color: #a3a3a3;
+            font-size: 14px;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            padding: 80px 10%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        input, textarea {
+            background-color: #1a1a1a;
+            border: 1px solid #262626;
+            padding: 16px;
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            font-size: 15px;
+            border-radius: 4px;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus, textarea:focus {
+            border-color: #fff;
+        }
+
+        form button {
+            background-color: #fff;
+            color: #000;
+            border: none;
+            padding: 16px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background 0.3s ease;
+        }
+
+        form button:hover {
+            background-color: #cccccc;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: #525252;
+            font-size: 13px;
+            border-top: 1px solid #1a1a1a;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Nav -->
+    <header>
+        <div class="logo">INK &amp; CONCEPT</div>
+        <nav>
+            <a href="#gallery">Available Flash</a>
+            <a href="#contact">Inquire</a>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <h1>Exclusive Tattoo Concepts &amp; Flash Designs</h1>
+        <p>Original, high-end illustrative tattoo designs ready for purchase. Buy the blueprint, own the exclusive rights, take it to your local artist.</p>
+        <a href="#contact" class="cta-btn">Book a Design</a>
+    </section>
+
+    <!-- Portfolio Gallery -->
+    <section class="gallery-container" id="gallery">
+        <h2 class="section-title">Available Designs</h2>
+        <div class="grid">
+            
+            <!-- Art Piece 1 -->
+            <div class="art-card">
+                <!-- Replace src with your actual drawing file names later -->
+                <img src="https://images.unsplash.com/photo-1562962691-37d4024367ef?q=80&w=600" alt="Tattoo Flash 1">
+                <div class="art-info">
+                    <h3>Neo-Traditional Dagger</h3>
+                    <p>Exclusive Rights • Available</p>
+                </div>
+            </div>
+
+            <!-- Art Piece 2 -->
+            <div class="art-card">
+                <img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?q=80&w=600" alt="Tattoo Flash 2">
+                <div class="art-info">
+                    <h3>Sacred Geometry Sleeve</h3>
+                    <p>Exclusive Rights • Available</p>
+                </div>
+            </div>
+
+            <!-- Art Piece 3 -->
+            <div class="art-card">
+                <img src="https://images.unsplash.com/photo-1568515045052-f9a854d70bfd?q=80&w=600" alt="Tattoo Flash 3">
+                <div class="art-info">
+                    <h3>Cyberpunk Oni Mask</h3>
+                    <p>Reserved</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="contact-container" id="contact">
+        <h2 class="section-title">Claim a Design / Commission</h2>
+        
+        <div style="text-align: center; margin-bottom: 40px; color: #a3a3a3;">
+			<p>Prefer direct communication? Reach out via email or social media:</p>
+			<p style="margin-top: 10px; font-weight: 600; color: #fff;">📧miadry59@gmail.com</p>
+			<p style="margin-top: 5px; font-weight: 600; color: #fff;">📸 Instagram: <a href="https://instagram.com/x_.book._lover02" style="color: #fff; text-decoration: underline;">@x_.book._lover02</a></p>
+		</div>
+        <form action="https://formspree.io/f/xbdevljn" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="_replyto" placeholder="Your Email Address" required>
+            <input type="text" name="subject" placeholder="Which design are you interested in?" required>
+            <textarea name="message" rows="6" placeholder="Tell me about your placement or ideas..." required></textarea>
+            
+            <button type="submit">Send Inquiry</button>
+        </form>
+    </section>
+
+    <footer>
+        &copy; 2026 Ink &amp; Concept. All Rights Reserved. Custom Designs &amp; Artworks.
+    </footer>
+
+</body>
+</html>
