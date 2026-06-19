@@ -96,9 +96,51 @@
             background-color: #cccccc;
         }
 
+        /* Interactive Tabs Styling */
+        .tabs-navigation {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            background-color: #121212;
+            padding-top: 40px;
+            border-bottom: 1px solid #1a1a1a;
+            flex-wrap: wrap;
+        }
+
+        .tab-button {
+            background: none;
+            border: none;
+            font-family: 'Cinzel', serif;
+            color: #a3a3a3;
+            font-size: 18px;
+            font-weight: 600;
+            padding: 15px 25px;
+            cursor: pointer;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            border-bottom: 2px solid transparent;
+        }
+
+        .tab-button:hover {
+            color: #fff;
+        }
+
+        .tab-button.active {
+            color: #fff;
+            border-bottom: 2px solid #fff;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
         /* Gallery Grid Section */
         .gallery-container {
-            padding: 80px 10%;
+            padding: 60px 10% 80px 10%;
             background-color: #121212;
         }
 
@@ -212,143 +254,234 @@
 </head>
 <body>
 
-    <!-- Header / Nav -->
     <header>
         <div class="logo">INK &amp; CONCEPT</div>
         <nav>
-            <a href="#gallery">Available Flash</a>
+            <a href="#view-content" onclick="switchTab('tattoos')">Available Flash</a>
+            <a href="#view-content" onclick="switchTab('gallery')">Gallery</a>
             <a href="#contact">Inquire</a>
         </nav>
     </header>
 
-    <!-- Hero -->
     <section class="hero">
         <h1>Exclusive Tattoo Concepts &amp; Flash Designs</h1>
         <p>Original, high-end illustrative tattoo designs ready for purchase. Buy the blueprint, own the exclusive rights, take it to your local artist.</p>
         <a href="#contact" class="cta-btn">Book a Design</a>
     </section>
 
-    <!-- Portfolio Gallery -->
-    <section class="gallery-container" id="gallery">
-	<section class="pricing-container" id="pricing">
-        <h2 class="section-title">Pricing Guide</h2>
-        <table class="pricing-table" border="1" bordercolor="#404040" cellpadding="15" style="width:100%; border-collapse:collapse; margin-top:30px; background-color:#121212;">
-            <thead>
-                <tr style="background-color: #1a1a1a;">
-                    <th style="color:#fff; text-align:left; font-family:'Cinzel', serif;">Design Type</th>
-                    <th style="color:#fff; text-align:left; font-family:'Cinzel', serif;">What's Included</th>
-                    <th style="color:#fff; text-align:right; font-family:'Cinzel', serif;">Estimated Price</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr style="border-bottom: 1px solid #404040;">
-                    <td><strong style="color:#fff;">5cm x 5cm</strong></td>
-                    <td style="color:#a3a3a3;">Linework blueprint</td>
-                    <td style="color:#fff; text-align:right; font-weight:600;">R25</td>
-                </tr>
-                <tr style="border-bottom: 1px solid #404040;">
-                    <td><strong style="color:#fff;">10cm x 10cm</strong></td>
-                    <td style="color:#a3a3a3;">Linework blueprint with shading if requested</td>
-                    <td style="color:#fff; text-align:right; font-weight:600;">R35</td>
-                </tr>
-                <tr style="border-bottom: 1px solid #404040;">
-                    <td><strong style="color:#fff;">30cm x 30cm</strong></td>
-                    <td style="color:#a3a3a3;">Shading detail, ideal for forearms/calves</td>
-                    <td style="color:#fff; text-align:right; font-weight:600;">R40</td>
-                </tr>
-				<tr style="border-bottom: 1px solid #404040;">
-                    <td><strong style="color:#fff;">50cm x 50cm</strong></td>
-                    <td style="color:#a3a3a3;">Full detail rendering, multi-view layout</td>
-                    <td style="color:#fff; text-align:right; font-weight:600;">R60</td>
-                </tr>
-				<tr style="border-bottom: 1px solid #404040;">
-                    <td><strong style="color:#fff;">60cm x 60cm</strong></td>
-                    <td style="color:#a3a3a3;">Full detail rendering, multi-view layout</td>
-                    <td style="color:#fff; text-align:right; font-weight:600;">R100</td>
-                </tr>
-				<tr style="border-bottom: 1px solid #404040;">
-                    <td><strong style="color:#fff;">Smaller than 5cm</strong></td>
-                    <td style="color:#a3a3a3;">Linework blueprint</td>
-                    <td style="color:#fff; text-align:right; font-weight:600;">R15</td>
-                </tr>
-				<tr style="border-bottom: 1px solid #404040;">
-                    <td><strong style="color:#fff;">Small Finger Tattoo</strong></td>
-                    <td style="color:#a3a3a3;">Linework blueprint with shading if requested</td>
-                    <td style="color:#fff; text-align:right; font-weight:600;">R20</td>
-                </tr>
-				<tr style="border-bottom: 1px solid #404040;">
-                    <td><strong style="color:#fff;">Half Spine</strong></td>
-                    <td style="color:#a3a3a3;">Full detail rendering, multi-view layout</td>
-                    <td style="color:#fff; text-align:right; font-weight:600;">R50</td>
-                </tr>
-				<tr style="border-bottom: 1px solid #404040;">
-                    <td><strong style="color:#fff;">Full Spine</strong></td>
-                    <td style="color:#a3a3a3;">Full detail rendering, multi-view layout</td>
-                    <td style="color:#fff; text-align:right; font-weight:600;">R75</td>
-                </tr>
-				<tr style="border-bottom: 1px solid #404040;">
-                    <td><strong style="color:#fff;">Full Leg</strong></td>
-                    <td style="color:#a3a3a3;">Full detail rendering, multi-view layout</td>
-                    <td style="color:#fff; text-align:right; font-weight:600;">R90</td>
-                </tr>
-				<tr style="border-bottom: 1px solid #404040;">
-                    <td><strong style="color:#fff;">Half Sleeve</strong></td>
-                    <td style="color:#a3a3a3;">Full detail rendering, multi-view layout for half-sleeves/thighs</td>
-                    <td style="color:#fff; text-align:right; font-weight:600;">R50</td>
-                </tr>
-				<tr style="border-bottom: 1px solid #404040;">
-                    <td><strong style="color:#fff;">Full Sleeve</strong></td>
-                    <td style="color:#a3a3a3;">Full detail rendering, multi-view layout</td>
-                    <td style="color:#fff; text-align:right; font-weight:600;">R80</td>
-                </tr>
-				<tr style="border-bottom: 1px solid #404040;">
-                    <td><strong style="color:#fff;">Full Back</strong></td>
-                    <td style="color:#a3a3a3;">Full detail rendering, multi-view layout</td>
-                    <td style="color:#fff; text-align:right; font-weight:600;">R120</td>
-                </tr>
-                <tr style="border-bottom: 1px solid #404040;">
-                    <td><strong style="color:#fff;">Exclusive Custom Commission</strong></td>
-                    <td style="color:#a3a3a3;">1-on-1 consultation, full rights ownership, up to 5 revisions revisions</td>
-                    <td style="color:#fff; text-align:right; font-weight:600;">Inquire for Quote</td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
-        <h2 class="section-title">Available Designs</h2>
-        <div class="grid">
-            
-            <!-- Art Piece 1 -->
-            <div class="art-card">
-                <!-- Replace src with your actual drawing file names later -->
-                <img src="https://images.unsplash.com/photo-1562962691-37d4024367ef?q=80&w=600" alt="Tattoo Flash 1">
-                <div class="art-info">
-                    <h3>Neo-Traditional Dagger</h3>
-                    <p>Exclusive Rights • Available</p>
-                </div>
-            </div>
+    <div class="tabs-navigation" id="view-content">
+        <button class="tab-button active" id="btn-pricing" onclick="switchTab('pricing')">Pricing Guide</button>
+        <button class="tab-button" id="btn-tattoos" onclick="switchTab('tattoos')">Available Tattoos</button>
+        <button class="tab-button" id="btn-gallery" onclick="switchTab('gallery')">Gallery</button>
+    </div>
 
-            <!-- Art Piece 2 -->
-            <div class="art-card">
-                <img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?q=80&w=600" alt="Tattoo Flash 2">
-                <div class="art-info">
-                    <h3>Sacred Geometry Sleeve</h3>
-                    <p>Exclusive Rights • Available</p>
-                </div>
-            </div>
-
-            <!-- Art Piece 3 -->
-            <div class="art-card">
-                <img src="https://images.unsplash.com/photo-1568515045052-f9a854d70bfd?q=80&w=600" alt="Tattoo Flash 3">
-                <div class="art-info">
-                    <h3>Cyberpunk Oni Mask</h3>
-                    <p>Reserved</p>
-                </div>
-            </div>
-
+    <section class="gallery-container">
+        
+        <div id="tab-pricing" class="tab-content active">
+            <h2 class="section-title">Pricing Guide</h2>
+            <table class="pricing-table" border="1" bordercolor="#404040" cellpadding="15" style="width:100%; border-collapse:collapse; background-color:#121212;">
+                <thead>
+                    <tr style="background-color: #1a1a1a;">
+                        <th style="color:#fff; text-align:left; font-family:'Cinzel', serif;">Design Type</th>
+                        <th style="color:#fff; text-align:left; font-family:'Cinzel', serif;">What's Included</th>
+                        <th style="color:#fff; text-align:right; font-family:'Cinzel', serif;">Estimated Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="border-bottom: 1px solid #404040;">
+                        <td><strong style="color:#fff;">5cm x 5cm</strong></td>
+                        <td style="color:#a3a3a3;">Linework blueprint</td>
+                        <td style="color:#fff; text-align:right; font-weight:600;">R25</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #404040;">
+                        <td><strong style="color:#fff;">10cm x 10cm</strong></td>
+                        <td style="color:#a3a3a3;">Linework blueprint with shading if requested</td>
+                        <td style="color:#fff; text-align:right; font-weight:600;">R35</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #404040;">
+                        <td><strong style="color:#fff;">30cm x 30cm</strong></td>
+                        <td style="color:#a3a3a3;">Shading detail, ideal for forearms/calves</td>
+                        <td style="color:#fff; text-align:right; font-weight:600;">R40</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #404040;">
+                        <td><strong style="color:#fff;">50cm x 50cm</strong></td>
+                        <td style="color:#a3a3a3;">Full detail rendering, multi-view layout</td>
+                        <td style="color:#fff; text-align:right; font-weight:600;">R60</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #404040;">
+                        <td><strong style="color:#fff;">60cm x 60cm</strong></td>
+                        <td style="color:#a3a3a3;">Full detail rendering, multi-view layout</td>
+                        <td style="color:#fff; text-align:right; font-weight:600;">R100</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #404040;">
+                        <td><strong style="color:#fff;">Smaller than 5cm</strong></td>
+                        <td style="color:#a3a3a3;">Linework blueprint</td>
+                        <td style="color:#fff; text-align:right; font-weight:600;">R15</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #404040;">
+                        <td><strong style="color:#fff;">Small Finger Tattoo</strong></td>
+                        <td style="color:#a3a3a3;">Linework blueprint with shading if requested</td>
+                        <td style="color:#fff; text-align:right; font-weight:600;">R20</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #404040;">
+                        <td><strong style="color:#fff;">Half Spine</strong></td>
+                        <td style="color:#a3a3a3;">Full detail rendering, multi-view layout</td>
+                        <td style="color:#fff; text-align:right; font-weight:600;">R50</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #404040;">
+                        <td><strong style="color:#fff;">Full Spine</strong></td>
+                        <td style="color:#a3a3a3;">Full detail rendering, multi-view layout</td>
+                        <td style="color:#fff; text-align:right; font-weight:600;">R75</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #404040;">
+                        <td><strong style="color:#fff;">Full Leg</strong></td>
+                        <td style="color:#a3a3a3;">Full detail rendering, multi-view layout</td>
+                        <td style="color:#fff; text-align:right; font-weight:600;">R90</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #404040;">
+                        <td><strong style="color:#fff;">Half Sleeve</strong></td>
+                        <td style="color:#a3a3a3;">Full detail rendering, multi-view layout for half-sleeves/thighs</td>
+                        <td style="color:#fff; text-align:right; font-weight:600;">R50</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #404040;">
+                        <td><strong style="color:#fff;">Full Sleeve</strong></td>
+                        <td style="color:#a3a3a3;">Full detail rendering, multi-view layout</td>
+                        <td style="color:#fff; text-align:right; font-weight:600;">R80</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #404040;">
+                        <td><strong style="color:#fff;">Full Back</strong></td>
+                        <td style="color:#a3a3a3;">Full detail rendering, multi-view layout</td>
+                        <td style="color:#fff; text-align:right; font-weight:600;">R120</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #404040;">
+                        <td><strong style="color:#fff;">Exclusive Custom Commission</strong></td>
+                        <td style="color:#a3a3a3;">1-on-1 consultation, full rights ownership, up to 5 revisions</td>
+                        <td style="color:#fff; text-align:right; font-weight:600;">Inquire for Quote</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
+
+        <div id="tab-tattoos" class="tab-content">
+            <h2 class="section-title">Available Designs</h2>
+            <div class="grid">
+                
+                <div class="art-card">
+                    <img src="https://images.unsplash.com/photo-1562962691-37d4024367ef?q=80&w=600" alt="Tattoo Flash 1">
+                    <div class="art-info">
+                        <h3>Neo-Traditional Dagger</h3>
+                        <p>Exclusive Rights • Available</p>
+                    </div>
+                </div>
+
+                <div class="art-card">
+                    <img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?q=80&w=600" alt="Tattoo Flash 2">
+                    <div class="art-info">
+                        <h3>Sacred Geometry Sleeve</h3>
+                        <p>Exclusive Rights • Available</p>
+                    </div>
+                </div>
+
+                <div class="art-card">
+                    <img src="https://images.unsplash.com/photo-1568515045052-f9a854d70bfd?q=80&w=600" alt="Tattoo Flash 3">
+                    <div class="art-info">
+                        <h3>Cyberpunk Oni Mask</h3>
+                        <p>Reserved</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="tab-gallery" class="tab-content">
+            <h2 class="section-title">Previous Designs Archive</h2>
+            <div class="grid">
+                
+                <div class="art-card">
+                    <img src="https://images.unsplash.com/photo-1550537687-c91072c4792d?q=80&w=600" alt="Previous Design 1">
+                    <div class="art-info">
+                        <h3>Classic Rose Linework</h3>
+                        <p>Archived • Custom Piece</p>
+                    </div>
+                </div>
+
+                <div class="art-card">
+                    <img src="https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?q=80&w=600" alt="Previous Design 2">
+                    <div class="art-info">
+                        <h3>Traditional Swallow</h3>
+                        <p>Archived • Custom Piece</p>
+                    </div>
+                </div>
+
+                <div class="art-card">
+                    <img src="https://images.unsplash.com/photo-1590247813693-5541d1c609fd?q=80&w=600" alt="Previous Design 3">
+                    <div class="art-info">
+                        <h3>Mythological Phoenix</h3>
+                        <p>Archived • Custom Piece</p>
+                    </div>
+                </div>
+
+                <div class="art-card">
+                    <img src="https://images.unsplash.com/photo-1605647540924-852290f6b0d5?q=80&w=600" alt="Previous Design 4">
+                    <div class="art-info">
+                        <h3>Botanical Fern</h3>
+                        <p>Archived • Custom Piece</p>
+                    </div>
+                </div>
+
+                <div class="art-card">
+                    <img src="https://images.unsplash.com/photo-1542226601-bc82e276ae0a?q=80&w=600" alt="Previous Design 5">
+                    <div class="art-info">
+                        <h3>Dark Art Skull</h3>
+                        <p>Archived • Custom Piece</p>
+                    </div>
+                </div>
+
+                <div class="art-card">
+                    <img src="https://images.unsplash.com/photo-1504198322253-cfa87a0ff25f?q=80&w=600" alt="Previous Design 6">
+                    <div class="art-info">
+                        <h3>Geometric Mandala</h3>
+                        <p>Archived • Custom Piece</p>
+                    </div>
+                </div>
+
+                <div class="art-card">
+                    <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=600" alt="Previous Design 7">
+                    <div class="art-info">
+                        <h3>Japanese Wave Concept</h3>
+                        <p>Archived • Custom Piece</p>
+                    </div>
+                </div>
+
+                <div class="art-card">
+                    <img src="https://images.unsplash.com/photo-1498036882173-b41c28a8ba34?q=80&w=600" alt="Previous Design 8">
+                    <div class="art-info">
+                        <h3>Abstract Celestial</h3>
+                        <p>Archived • Custom Piece</p>
+                    </div>
+                </div>
+
+                <div class="art-card">
+                    <img src="https://images.unsplash.com/photo-1576016770956-debb63d900bb?q=80&w=600" alt="Previous Design 9">
+                    <div class="art-info">
+                        <h3>Fine-Line Micro Constellation</h3>
+                        <p>Archived • Custom Piece</p>
+                    </div>
+                </div>
+
+                <div class="art-card">
+                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=600" alt="Previous Design 10">
+                    <div class="art-info">
+                        <h3>Minimalist Wilderness Peak</h3>
+                        <p>Archived • Custom Piece</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
     </section>
 
-    <!-- Contact Form Section -->
     <section class="contact-container" id="contact">
         <h2 class="section-title">Claim a Design / Commission</h2>
         
@@ -370,6 +503,22 @@
     <footer>
         &copy; 2026 Ink &amp; Concept. All Rights Reserved. Custom Designs &amp; Artworks.
     </footer>
+
+    <script>
+        function switchTab(tabName) {
+            // Remove active classes from all content sections and buttons
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            document.querySelectorAll('.tab-button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            // Activate chosen tab and its matching button
+            document.getElementById('tab-' + tabName).classList.add('active');
+            document.getElementById('btn-' + tabName).classList.add('active');
+        }
+    </script>
 
 </body>
 </html>
